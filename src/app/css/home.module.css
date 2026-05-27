@@ -1,0 +1,1191 @@
+.heroSection h1 {
+  font-weight: 300;
+}
+
+.heroSection p {
+  line-height: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 2.3rem;
+}
+
+.actionBtn, .actionBtnDark  {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding: 1.6dvw 3.5dvw;
+  transition: all 0.5s linear;
+}
+
+.actionBtn {
+  border: 2px solid var(--white);
+  background: transparent;
+}
+
+.actionBtn:hover {
+  background: var(--white);
+  color: var(--dark-blue);
+}
+
+.pros, .two {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 0;
+}
+
+.pros:first-child {
+  background: url("/patterns/pattern-curve-top-right.svg") no-repeat;
+}
+
+.pros .illus {
+  display: block;
+  width: 49%;
+  border: 1px solid var(--dark);
+  position: relative;
+  aspect-ratio: 3/4;
+}
+
+.one .pros:first-child .illus{
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  transition: all 0.3s linear;
+}
+
+.one .pros:first-child .illus::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 92%;
+  height: 4rem;
+  border-radius: 4rem;
+  background: radial-gradient(var(--soft-blue-three), var(--soft-blue-two));
+  filter: blur(27px);
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: -1;
+}
+
+.pros:last-child {
+  background: url("/patterns/pattern-curve-top-left.svg") no-repeat;
+}
+
+.pros:last-child .illus{
+  transform: translateY(6%);
+  position: relative;
+}
+
+.pros:last-child .illus .pattern {
+  display: block;
+  width: 10dvw;
+  aspect-ratio: 4/3;
+  position: absolute;
+  z-index: 2; 
+}
+
+
+
+.pros .text h2, 
+.two > .text h1, 
+.three .details h1 {
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+
+.pros .text h2, 
+.three .details h1 {
+  margin: 2rem 0 1.3rem;
+}
+
+.pros .text p, 
+.two > .text p, 
+.three .details p {
+  color: var(--dark-blue);
+  font-size: clamp(1rem, 2.2dvw , 1.4rem);
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+.two > .text {
+  position: relative;
+}
+
+.two > .text h1 {
+  line-height: 2.7rem;
+  color: var(--white);
+  font-weight: 600;
+  margin: 3rem 0 1.2rem;
+}
+
+.two > .text p {
+  color: var(--soft-white);
+} 
+
+.menuItem {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 0;
+  gap: 10%;
+}
+
+.menuItem:not(:last-of-type) {
+  border-bottom: 1px solid var(--blue);
+}
+
+.menuItem > .text {
+  color: var(--white);
+}
+
+.menuItem .img {
+  display: block;
+}
+
+.menuItem > .text h2 {
+  font-weight: 600;
+  line-height: 2rem;
+  position: relative;
+}
+
+.menuItem > .text h2::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--soft-blue);
+  position: absolute;
+  top: 45%;
+  left: 0;
+}
+
+.menuItem > .text p {
+    line-height: 1.6rem;
+    color: var(--soft-white);
+    font-weight: 300;
+}
+
+.three {
+  width: 100%;
+  background:  var(--white) url("/patterns/pattern-curve-top-right.svg") no-repeat;
+  background-position: -50% -1rem;
+  background-size: contain;
+}
+
+
+.three .illus {
+  position: relative;
+  overflow: visible;
+  z-index: 0;
+}
+
+.three .illus::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 92%;
+    height: 7rem;
+    border-radius: 4rem;
+    background: radial-gradient(var(--blue), var(--soft-blue));
+    filter: blur(27px);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.three .illus .img {
+    display: block;
+    width: 100%;
+}
+
+.three .illus .pattern {
+    display: block;
+    position: absolute;
+    z-index: 6;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1; 
+    }
+    70%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0; 
+    }
+    30%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {opacity: 0.7;}
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.1;
+        transform: scale(0.3) ;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+.img.family, 
+.img.special, 
+.img.social {
+    display: block;
+    opacity: 0;
+    animation-name: disappear;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+.img.family {
+    position: relative;
+    z-index: 3; 
+}
+
+.img.special, 
+.img.social {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.img.special {
+    z-index: 2;
+}
+
+.img.social {
+    z-index: 1;
+}
+
+.img.family.active, 
+.img.special.active, 
+.img.social.active {
+    opacity: 1;
+    animation-name: appear;
+}
+
+
+.actionBtnDark {
+    border: 2px solid var(--dark);
+    background: var(--dark);
+    margin: 3rem 0;
+}
+
+.actionBtnDark:hover {
+    background: var(--white);
+    color: var(--dark);
+}
+
+.ul {
+    list-style-type: none;
+}
+
+.three .details .detailsTitle {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.three .details .detailsTitle .family,
+.three .details .detailsTitle .special, 
+.three .details .detailsTitle .social {
+    display: block;
+    animation-name: disappear;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    opacity: 0;
+}
+
+.three .details .detailsTitle .family {
+    position: relative;
+    z-index: 3;
+}
+
+.three .details .detailsTitle .special, 
+.three .details .detailsTitle .social  {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.three .details .detailsTitle .special {
+    z-index: 2;
+}
+
+.three .details .detailsTitle .social {
+    z-index: 1;
+}
+
+.three .details .detailsTitle .family.active,
+.three .details .detailsTitle .special.active , 
+.three .details .detailsTitle .social.active {
+  opacity: 1;
+  animation-name: appear;
+}
+
+.three .details .ul li {
+    display: block;
+    height: auto;
+    margin: 1rem 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.three .details .ul li .text {
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.2dvw, 1.rem);
+    color: var(--blue);
+    opacity: 0.5;
+    transition: all .3s linear;
+}
+
+.three .details .ul li:hover .text {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.three .details .ul li .indicator {
+    display: block;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    background: var(--blue);
+}
+
+.three .details .ul li.active .text {
+    opacity: 1;
+}
+
+@keyframes grow {
+    from {width: 0;}
+    to {width: calc((100dvw - 20dvw) / 12);}
+}
+
+@keyframes shrink {
+    from {width: calc((100dvw - 20dvw) / 12);}
+    to {width: 0;}
+}
+
+.three .paragraph {
+    position: relative;
+}
+
+.three .paragraph .social, 
+.three .paragraph .special, 
+.three .paragraph .family {
+  color: var(--dark-blue);
+  background: var(--white);
+  opacity: 0;
+  animation-name: disappear;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+.three .paragraph .family {
+    display: block;
+    position: relative;
+    z-index: 3;
+}
+
+.three .paragraph .social, 
+.three .paragraph .special {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.three .paragraph .special {
+    z-index: 2;
+}
+
+.three .paragraph .social {
+    z-index: 1;
+}
+
+.three .paragraph .family.active, 
+.three .paragraph .social.active,
+.three .paragraph .special.active {
+  opacity: 1;
+  animation-name: appear;
+}
+
+.four {
+    padding: 4rem 10dvw;
+    background: url("/ready-bg-desktop.jpg") no-repeat;
+    background-size: cover;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.four h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+
+@media screen and (min-width: 1001px) {
+    .main {
+        background: linear-gradient(to right, transparent 34%, rgba(85, 86, 90, 0.084) 34%), url("/hero-bg-desktop.jpg") no-repeat;
+        background-size: contain;
+        background-attachment: fixed;
+        background-position: right;
+    }
+
+    .heroSection {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 110vh;
+        background: linear-gradient(to right, var(--dark) 34%, transparent 34%);
+        color: var(--white);
+    }
+
+    .heroSectionBody {
+      width: 50%;
+      height: 100%;
+      padding-top: 5dvw;
+      padding-left: 10dvw;
+    }
+    
+    .heroSectionBody h1 {
+        /* margin: 9dvw 0 0.9rem; */
+        padding: 1rem 0;
+        font-size: clamp(2.2rem, 4.8dvw , 4.7rem);
+    }
+    
+    .heroSectionBody p {
+        width: 90%;
+        font-size: clamp(1rem, 1.5dvw , 1.4rem);
+    }
+
+    .one {
+        background: linear-gradient(to bottom, var(--white) 95%, var(--dark) 95%);
+    }
+
+    .actionBtn, .actionBtnDark  {
+        font-size: clamp(1rem, 1.2dvw , 1.3rem);
+    }
+
+    .tablet, .three .illus .img.tablet {
+        display: none;
+    }
+
+    .pros {
+      animation: fadeIn 1s linear;
+      animation-fill-mode:both;
+      animation-timeline: view();
+      animation-range: entry 5%;
+    }
+
+    .pros {
+        padding: 0 10dvw;
+        align-items: center;
+    }
+
+    .pros .illus .tablet {
+        display: none;
+    }
+
+    .pros:first-child {
+        background-size: 61.5%;
+        background-position: 0 77%;
+    }
+
+    .one .pros:first-child .illus {
+        transform: translateY(-8%);
+    }
+
+    .pros .text h2, .two > .text h1, .three .details h1 {
+        font-size: clamp(2rem, 3.4dvw , 4rem);
+        line-height: 3.4rem;
+    }
+
+    .pros:last-child {
+        flex-direction: row-reverse;
+        background-size: 61.5%;
+        background-position: 100% 78%;
+    }
+
+    .pros:last-child .illus .pattern {
+        display: block;
+        width: 10dvw;
+        aspect-ratio: 2/1;
+        position: absolute;
+        right: -7dvw;
+        top: 37%;
+        z-index: 2; 
+    }
+
+    .pros .text, .two > .text {
+        width: 40%;
+        
+    }
+
+    .two {
+        background: var(--dark) url("/pattern-curve-top-right.svg") no-repeat;
+        background-size: auto;
+        background-position: -51% 203%;
+        padding: 5rem 10dvw;
+        position: relative;
+    }
+
+    .two::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: var(--soft-blue-two);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .two > .text .img {
+        position: absolute;
+        left : 0;
+        top: 0;
+    }
+ 
+    .two .menu {
+        width: 49%;
+    }
+
+    .menuItem .img {
+        width: 15dvw;
+        max-width: 8.5rem;
+        position: relative;
+        aspect-ratio: 4/3;
+    }
+
+    .menuItem > .text h2 {
+        font-size: clamp(0.8rem, 1.3dvw , 1.5rem);
+    }
+
+    .menuItem > .text h2::before {
+        width: 8%;
+        height: 1px;
+        transform: translateX(-190%);
+    }
+
+    .menuItem > .text p {
+        font-size: clamp(0.8rem, 1.2dvw , 1.3rem);
+    }
+
+    .three {
+        padding: 9rem 10dvw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-size: 100%;
+        background-position: -63dvw 0;
+    }
+
+    .three .illus .img.tablet, .three .illus .img.mob {
+        display: none;
+    }
+
+    .three .illus {
+        width: 49%;
+        aspect-ratio: 9/10;
+    }
+
+    .three .illus .pattern {
+        width: 10dvw;
+        aspect-ratio: 6/3;
+        left: -2dvw;
+        top: -2.2rem;
+    }
+
+    .three .details {
+        width: 40%;
+    }
+
+    .three .details .ul li .indicator {
+        top: 40%;
+        left: -8.7dvw;
+        opacity: 1;
+        transition: all 1s linear;
+        animation: shrink 0.5s linear;
+    }
+
+    .three .details .ul li.active .indicator {
+        width: calc((100dvw - 20dvw) / 12);
+        animation: grow 0.5s linear;
+    }
+
+}
+
+
+
+@media screen and (width <= 1000px)  {
+    .main {
+        background: url("/hero-bg-tablet\ \(1\).jpg") no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+    }
+
+    .heroSection {
+        padding: 50dvw 12dvw 17dvw;
+        /* min-height: 100dvh; */
+        background: transparent;
+        color: var(--white);
+        animation: fadeOut 1s linear;
+        animation-fill-mode: backwards;
+        animation-timeline: view();
+        animation-range: exit 5%;
+    }
+
+    .heroSection > div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-end; */
+        align-items: center;
+    }
+
+    .heroSection > div h1 {
+        margin: 1.5rem auto;
+        font-size: clamp(1.5rem, 5.5dvw , 3.5rem);
+        line-height: 3rem;
+    }
+
+    .heroSection > div p, .pros .text p {
+        width: 100%;
+        text-align: center;
+        font-size: clamp(1.1rem, 2.5dvw , 1.7rem);
+        line-height: 2rem;
+    }
+
+    .one {
+        background: linear-gradient(to bottom, transparent 13dvw, var(--white) 13dvw);
+    }
+
+    .actionBtn, .actionBtnDark  {
+        font-size: clamp(1rem, 2dvw , 1.6rem);
+        padding: 3.2dvw 7dvw;
+    }
+
+    .pros {
+        display: block;
+        padding: 0 12dvw;
+    }
+
+    .pros .illus, .pros .text, .menuItem {
+        animation: fadeIn 1s linear;
+        animation-fill-mode: both;
+        animation-timeline: view();
+        animation-range: entry 5%;
+    }
+
+    .pros .illus, .pros .text {
+        width: 100%;
+    }
+
+    .pros .illus .mob {
+        display: none;
+    }
+
+    .pros:first-child {
+        background-size: 120%;
+        background-position: -74dvw 26dvw;
+    }
+
+    .pros:last-child {
+        background-size: 100dvw;
+        background-position: 50dvw 103%;
+    }
+
+    /* .one .pros:first-child .illus {
+        transform: translateY(10%);
+        
+    } */
+
+    .pros:last-child .illus::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 92%;
+        height: 4rem;
+        border-radius: 4rem;
+        background: radial-gradient(var(--soft-blue-three), var(--soft-blue-two));
+        filter: blur(27px);
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        z-index: -1;
+    }
+
+    .pros:last-child .illus .pattern {
+        display: block;
+        width: 20dvw;
+        position: absolute;
+        right: 0;
+        bottom: 7dvw;
+        z-index: 2; 
+        transform: translateX(40%);
+    }
+    
+    .pros .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10dvw;
+    }
+
+    .pros .text {
+        padding-top: 9dvw;
+    }
+
+    .pros .text h2, .two > .text h1, .three .details h1, .four h1 {
+        font-size: clamp(1.5rem, 6dvw , 3.5rem);
+        line-height: 3rem;
+        text-align: center;
+    }
+    
+    .pros .text h2,
+    .pros .text p {
+        text-align: center;
+    }
+
+    .pros .text h2 {
+        width: 90%;
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    .pros .text p {
+        width: 80%;
+    }
+
+    .two {
+        padding: 10dvw;
+        background: var(--dark);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .two .text, .two .menu {
+        width: 100%;
+    }
+
+    .two > .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2.5rem;
+    }
+
+    .two > .text h1, .two > .text p {
+        width: 85%;
+        text-align: center;
+    }
+
+    .two > .text p, .three .details .paragraph p {
+        font-size: clamp(1.1rem, 2.5dvw , 1.7rem);
+        line-height: 2.4rem;
+    }
+
+    .menuItem .img {
+        width: 17dvw;
+    }
+
+    .menuItem > .text h2 {
+        line-height: 2.6rem;
+        font-size: clamp(1rem, 2.5dvw , 1.5rem);
+    }
+
+    .menuItem > .text h2::before {
+        width: 8%;
+        height: 1px;
+        transform: translateX(-180%);
+    }
+
+    .menuItem > .text p {
+        font-size: clamp(1rem, 2.2dvw , 1.5rem);
+        line-height: 1.8rem;
+        font-weight: 400;
+    }
+
+    .three {
+        padding: 5dvw 0;
+        background-position: calc(-84dvw / 2) 0;
+    }
+
+    .three .illus {
+        margin: 10dvw 12dvw;
+    }
+
+    .three .illus .img.desk, .three .illus .img.mob {
+        display: none;
+    }
+
+    .three .illus .pattern {
+        width: 20dvw;
+        left: 0;
+        top: 0;
+        transform: translate(-40%, -50%);
+    }
+
+    
+    .three .details {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .three .details > div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .three .details .ul, .three .details .paragraph, .three .details .detailsTitle, .three .details .paragraph p {
+        width: 100%;
+    }
+
+    .three .details .ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .three .details .ul li {
+        padding-bottom: 1rem;
+    }
+
+    .three .details .ul li .text {
+        font-size: clamp(1rem, 2.2dvw, 1.5rem);
+    }
+
+    .three .details .ul li .indicator {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+        transition: all 0.3s linear;
+    }
+
+    .three .details .ul li.active .indicator {
+        width: 25%;
+    }
+
+    .three .details h1 div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .three .details .paragraph {
+        width: 70%;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .four {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        background: url("/ready-bg-tablet.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    .four > h1 {
+        width: 100%;
+    }
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .main {
+        background: url("/hero-back-mobile.jpg") no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+        /* background: none; */
+    }
+
+    
+    .heroSection {
+        animation: fadeOut 1s linear;
+        animation-fill-mode: backwards;
+        animation-timeline: view();
+        animation-range: exit 5%;
+        padding: 30dvh 6dvw 0;
+        min-height: 200dvw;
+        background: transparent;
+        color: var(--white);
+    }
+
+    .heroSection > div h1 {
+        width: 100%;
+        text-align: center;
+        text-wrap: balance;
+        font-size: clamp(1.5rem, 8.5dvw , 3.5rem);
+    }
+
+    .heroSection > div p {
+        width: 100%;
+        text-align: center;
+        font-size: clamp(1rem, 4.2dvw , 2rem);
+        text-wrap: balance;
+        line-height: 1.8rem;
+    }
+
+    .actionBtn, .actionBtnDark  {
+        font-size: clamp(0.9rem, 4dvw , 2rem);
+        padding: 5.5dvw 14dvw;
+        
+    }
+
+    .one {
+        background: linear-gradient(to bottom, var(--dark) 2%, var(--white) 2%);
+    }
+
+    .one .pros {
+        background: transparent;
+    }
+
+    .pros {
+        padding: 0 6dvw;
+
+    }
+
+    .pros .illus .tablet {
+        display: none;
+    }
+
+    .pros .illus .mob {
+        display: block;
+        width: 100%;
+    }
+
+    .pros:first-child .illus::after, 
+    .pros:last-child .illus::after {
+        height: 8rem;
+        opacity: 0.7;
+    }
+
+    .pros .illus, .pros .text, .menuItem .img, .menuItem > .text {
+        animation: fadeIn 1s linear;
+        animation-fill-mode: backwards;
+        animation-timeline: view();
+        animation-range: entry 5%;
+    }
+
+    .pros .text {
+        width: 100%;
+    }
+
+    .pros .text h2 {
+        font-size: clamp(1rem, 7.5dvw , 2.5rem);
+        line-height: 2.6rem;
+        margin-top: 12dvw;
+    }
+
+    .pros .text p {
+        width: 100%;
+        font-size: clamp(1rem, 4.2dvw , 2rem);
+        text-align: center;
+        line-height: 1.7rem;
+        font-weight: 500;
+    }
+
+    .pros:first-child, .pros:last-child {
+        background: var(--white);
+    }
+
+    .one .pros:first-child .illus {
+        transform: translateY(-11dvw);
+    }
+
+    .pros:last-child .illus .pattern {
+        display: none;
+    }
+
+    .pros:first-child .text {
+        padding-bottom: 11dvh;
+    }
+
+    .pros:last-child .text {
+        padding: 9dvh 0 13dvh;
+    }
+
+    .two {
+        padding: 20dvw 6dvw 13dvw;
+    }
+
+    .two > .text h1 {
+        width: 100%;
+        font-size: clamp(1rem, 7.5dvw , 2.5rem);
+        line-height: 2.6rem;
+        text-wrap: balance;
+    }
+
+    .two > .text p {
+        width: 100%;
+        font-size: clamp(1rem, 4.2dvw , 2rem);
+        line-height: 1.8rem;
+    }
+
+    .menuItem {
+        display: block;
+        padding-bottom: 3dvh;
+    }
+
+    .menuItem .img, .menuItem > .text {
+        width: 100%;
+    }
+
+    .menuItem > .text h2 {
+        text-align: center;
+        font-size: clamp(1rem, 5dvw , 2rem);
+    }
+
+    .menuItem > .text p {
+        text-align: center;
+        font-size: clamp(1rem, 4.2dvw , 2rem);
+    }
+
+    .menuItem > .text {
+        padding: 8dvw 0 10dvw;
+    }
+
+    .menuItem > .text h2::before {
+        display: none;
+    }
+
+    .menuItem > .text p {
+        line-height: 1.8rem;
+    }
+
+    .three {
+        background: var(--white);
+        padding: 20dvw 0;
+    }
+
+    .three .illus {
+       margin: 0 6dvw 10dvw; 
+    }
+
+    .three .illus .img.desk, .three .illus .img.tablet {
+        display: none;
+    }
+
+    .three .illus .img.mob {
+        display: block;
+        width: 100%;
+    }
+
+    .three .illus .pattern {
+        display: none;
+    }
+
+    .three .details {
+        padding: 0 5dvw;
+    }
+
+    .three .details .ul {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .three .details .ul li {
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .three .details .ul li .text {
+        font-size: clamp(1rem, 4.5dvw, 1.5rem);
+    }
+
+    .three .details > div h1, 
+    .three .details > div .paragraph , 
+    .three .details > div .paragraph p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .three .details > div h1, 
+    .four h1 {
+        font-size: clamp(1rem, 7dvw , 2.5rem);
+    }
+
+    .three .details > div .paragraph p {
+        width: 100%;
+        font-size: clamp(1rem, 4dvw , 2rem);
+        line-height: 2rem;
+        font-weight: 500;
+    }
+
+    .four {
+        background: url("/ready-bg-mobile.jpg") no-repeat;
+        background-size: 100%;
+        padding: 20dvw 5dvw;
+    }
+
+    .four h1 {
+        text-align: center;
+    }
+}

@@ -1,0 +1,10 @@
+.header {
+    padding: 4dvw 10dvw;
+}
+
+.logo {
+    position: relative;
+    display: block;
+    width: clamp(3.5rem, 9dvw, 6rem);
+    aspect-ratio: 5/2;
+}

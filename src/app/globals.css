@@ -1,0 +1,40 @@
+:root {
+  --dark: #111111;
+  --white: #fff;
+  --soft-white: #d4d4d4;
+  --dark-blue: #242b37;
+  --soft-blue: #ffffffdd;
+  --soft-blue-two: #f2f3f4;
+  --soft-blue-three: rgba(59, 59, 162, 0.455);
+  --blue: #4c4c4c;
+
+  --background: #fafafa;
+  --foreground: #fff;
+
+  --text-primary: #000;
+  --text-secondary: #656565;
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+  --button-secondary-border: #ebebeb;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-league-spartan), Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
