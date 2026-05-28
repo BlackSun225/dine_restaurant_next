@@ -34,6 +34,7 @@
 .footer > div ul li {
     font-size: 0.9rem;
     letter-spacing: 2px;
+    list-style-type: none;
 }
 
 .footer > div ul li:not(:last-child) {

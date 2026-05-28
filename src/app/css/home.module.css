@@ -477,20 +477,19 @@
 }
 
 
-
 @media screen and (min-width: 1001px) {
     .main {
         background: linear-gradient(to right, transparent 34%, rgba(85, 86, 90, 0.084) 34%), url("/hero-bg-desktop.jpg") no-repeat;
         background-size: contain;
         background-attachment: fixed;
-        background-position: right;
+        background-position: top right;
     }
 
     .heroSection {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 110vh;
+        aspect-ratio: 16/7;
         background: linear-gradient(to right, var(--dark) 34%, transparent 34%);
         color: var(--white);
     }
@@ -525,12 +524,12 @@
         display: none;
     }
 
-    .pros {
+    /* .pros {
       animation: fadeIn 1s linear;
       animation-fill-mode:both;
       animation-timeline: view();
       animation-range: entry 5%;
-    }
+    } */
 
     .pros {
         padding: 0 10dvw;
@@ -547,7 +546,7 @@
     }
 
     .one .pros:first-child .illus {
-        transform: translateY(-8%);
+        transform: translateY(-10%);
     }
 
     .pros .text h2, .two > .text h1, .three .details h1 {
@@ -635,7 +634,8 @@
         background-position: -63dvw 0;
     }
 
-    .three .illus .img.tablet, .three .illus .img.mob {
+    .three .illus .img.tablet, 
+    .three .illus .img.mob {
         display: none;
     }
 
@@ -680,14 +680,17 @@
     }
 
     .heroSection {
-        padding: 50dvw 12dvw 17dvw;
-        /* min-height: 100dvh; */
         background: transparent;
         color: var(--white);
         animation: fadeOut 1s linear;
         animation-fill-mode: backwards;
         animation-timeline: view();
         animation-range: exit 5%;
+        display: flex;
+        min-height: 100dvh;
+        padding: 44dvw 12dvw 17dvw;
+        flex-direction: column;
+        align-items: center;
     }
 
     .heroSection > div {
@@ -695,17 +698,19 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        /* justify-content: flex-end; */
         align-items: center;
     }
 
     .heroSection > div h1 {
+        width: 65%;
         margin: 1.5rem auto;
-        font-size: clamp(1.5rem, 5.5dvw , 3.5rem);
-        line-height: 3rem;
+        font-size: clamp(2rem, 6dvw , 4rem);
+        line-height: 4.7rem;
+        text-align: center;
     }
 
-    .heroSection > div p, .pros .text p {
+    .heroSection > div p,
+    .pros .text p {
         width: 100%;
         text-align: center;
         font-size: clamp(1.1rem, 2.5dvw , 1.7rem);
@@ -726,37 +731,39 @@
         padding: 0 12dvw;
     }
 
-    .pros .illus, .pros .text, .menuItem {
+    .pros .illus, 
+    .pros .text, 
+    .menuItem {
         animation: fadeIn 1s linear;
         animation-fill-mode: both;
         animation-timeline: view();
         animation-range: entry 5%;
     }
 
-    .pros .illus, .pros .text {
+    .pros .illus, 
+    .pros .text {
         width: 100%;
+    }
+
+    .pros .illus {
+        aspect-ratio: 16/10;
     }
 
     .pros .illus .mob {
         display: none;
     }
 
-    .pros:first-child {
+    .pros:first-of-type {
         background-size: 120%;
         background-position: -74dvw 26dvw;
     }
 
-    .pros:last-child {
+    .pros:last-of-type {
         background-size: 100dvw;
         background-position: 50dvw 103%;
     }
 
-    /* .one .pros:first-child .illus {
-        transform: translateY(10%);
-        
-    } */
-
-    .pros:last-child .illus::after {
+    .pros:last-of-type .illus::after {
         content: "";
         position: absolute;
         display: block;
@@ -771,14 +778,15 @@
         z-index: -1;
     }
 
-    .pros:last-child .illus .pattern {
+    .pros:last-of-type .illus .pattern {
         display: block;
-        width: 20dvw;
+        width: 22dvw;
+        aspect-ratio: 6/3;
         position: absolute;
         right: 0;
         bottom: 7dvw;
         z-index: 2; 
-        transform: translateX(40%);
+        transform: translateX(35%);
     }
     
     .pros .text {
@@ -792,9 +800,11 @@
         padding-top: 9dvw;
     }
 
-    .pros .text h2, .two > .text h1, .three .details h1, .four h1 {
-        font-size: clamp(1.5rem, 6dvw , 3.5rem);
-        line-height: 3rem;
+    .pros .text h2, 
+    .two > .text h1, 
+    .three .details h1, .four h1 {
+        font-size: clamp(2rem, 6dvw , 4rem);
+        line-height: 3.5rem;
         text-align: center;
     }
     
@@ -820,7 +830,8 @@
         align-items: center;
     }
 
-    .two .text, .two .menu {
+    .two .text, 
+    .two .menu {
         width: 100%;
     }
 
@@ -831,18 +842,23 @@
         padding-bottom: 2.5rem;
     }
 
-    .two > .text h1, .two > .text p {
-        width: 85%;
+    .two > .text h1, 
+    .two > .text p {
+        width: 78%;
         text-align: center;
     }
 
-    .two > .text p, .three .details .paragraph p {
+    .two > .text p, 
+    .three .details .paragraph p {
         font-size: clamp(1.1rem, 2.5dvw , 1.7rem);
         line-height: 2.4rem;
     }
 
     .menuItem .img {
-        width: 17dvw;
+        width: 24dvw;
+        max-width: 14rem;
+        position: relative;
+        aspect-ratio: 4/3;
     }
 
     .menuItem > .text h2 {
@@ -863,26 +879,48 @@
     }
 
     .three {
-        padding: 5dvw 0;
-        background-position: calc(-84dvw / 2) 0;
+        padding: 5dvw 0 8.5dvw;
+        background-position: 350% top;
+        background-size: 120%;
     }
 
     .three .illus {
-        margin: 10dvw 12dvw;
+        width: 100%;
+        aspect-ratio: 16/10;
+        position: relative;
+        /* border: 1px solid red; */
+        margin-bottom: 6.5dvw;
     }
 
-    .three .illus .img.desk, .three .illus .img.mob {
+    .three .illus .tablet {
+        /* display: block; */
+        padding: 10dvw 12dvw 0;
+        z-index: 1;
+    }
+
+    .three .illus .desk, 
+    .three .illus .mob {
         display: none;
     }
 
     .three .illus .pattern {
         width: 20dvw;
+        aspect-ratio: 6/2.7;
         left: 0;
         top: 0;
-        transform: translate(-40%, -50%);
+        transform: translate(calc(12dvw - 40%), calc(10dvw - 50%));
+        z-index: 2;
     }
 
-    
+    .three .illus::before {
+        width: calc(100% - 22dvw);
+        height: 7rem;
+        border-radius: 4rem;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+
     .three .details {
         width: 100%;
         display: flex;
@@ -897,7 +935,10 @@
         align-items: center;
     }
 
-    .three .details .ul, .three .details .paragraph, .three .details .detailsTitle, .three .details .paragraph p {
+    .three .details .ul, 
+    .three .details .paragraph, 
+    .three .details .detailsTitle, 
+    .three .details .paragraph p {
         width: 100%;
     }
 
@@ -913,6 +954,7 @@
 
     .three .details .ul li .text {
         font-size: clamp(1rem, 2.2dvw, 1.5rem);
+        letter-spacing: 4px;
     }
 
     .three .details .ul li .indicator {
