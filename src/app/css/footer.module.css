@@ -68,7 +68,8 @@
     }
 
     .footer > div ul li {
-        font-size: clamp(1rem, 1.9dvw, 1.5rem);
+        font-size: clamp(1rem, 3.5dvw, 1.7rem);
+        line-height: clamp(1.3rem, 4.5dvw, 2rem);
     }
 }
 
@@ -84,6 +85,7 @@
 
     .footer > div {
         flex-direction: column;
+        gap: 6dvh;
     }
 
     .footer .logo {

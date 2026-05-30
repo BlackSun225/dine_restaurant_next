@@ -3,9 +3,16 @@
 }
 
 .heroSection p {
-  line-height: 1.8rem;
   font-weight: 300;
   margin-bottom: 2.3rem;
+}
+
+.heroSection p,
+.pros .text p, 
+.two > .text p, 
+.three .details p {
+  font-size: clamp(0.9rem, 1.7dvw , 1.2rem);
+  line-height: clamp(1.1rem, 2.4dvw, 2rem);
 }
 
 .actionBtn, .actionBtnDark  {
@@ -59,7 +66,7 @@
   content: "";
   position: absolute;
   display: block;
-  width: 92%;
+  width: 95%;
   height: 4rem;
   border-radius: 4rem;
   background: radial-gradient(var(--soft-blue-three), var(--soft-blue-two));
@@ -105,8 +112,6 @@
 .two > .text p, 
 .three .details p {
   color: var(--dark-blue);
-  font-size: clamp(1rem, 2.2dvw , 1.4rem);
-  line-height: 1.8rem;
   font-weight: 400;
 }
 
@@ -186,7 +191,7 @@
     content: "";
     position: absolute;
     display: block;
-    width: 92%;
+    width: 95%;
     height: 7rem;
     border-radius: 4rem;
     background: radial-gradient(var(--blue), var(--soft-blue));
@@ -462,11 +467,16 @@
 }
 
 .four {
-    padding: 4rem 10dvw;
+
     background: url("/ready-bg-desktop.jpg") no-repeat;
     background-size: cover;
     color: var(--white);
+}
+
+.four > div {
+    padding: 4rem 10dvw;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -509,7 +519,6 @@
     
     .heroSectionBody p {
         width: 90%;
-        font-size: clamp(1rem, 1.5dvw , 1.4rem);
     }
 
     .one {
@@ -524,12 +533,16 @@
         display: none;
     }
 
-    /* .pros {
+    .pros, 
+    .two .menu .menuItem, 
+    .three .illus,
+    .four > div
+     {
       animation: fadeIn 1s linear;
       animation-fill-mode:both;
       animation-timeline: view();
       animation-range: entry 5%;
-    } */
+    }
 
     .pros {
         padding: 0 10dvw;
@@ -549,9 +562,11 @@
         transform: translateY(-10%);
     }
 
-    .pros .text h2, .two > .text h1, .three .details h1 {
+    .pros .text h2, 
+    .two > .text h1, 
+    .three .details h1 {
         font-size: clamp(2rem, 3.4dvw , 4rem);
-        line-height: 3.4rem;
+        line-height: clamp(2rem, 3.5dvw, 3.4rem);
     }
 
     .pros:last-child {
@@ -570,7 +585,8 @@
         z-index: 2; 
     }
 
-    .pros .text, .two > .text {
+    .pros .text, 
+    .two > .text {
         width: 40%;
         
     }
@@ -612,7 +628,8 @@
     }
 
     .menuItem > .text h2 {
-        font-size: clamp(0.8rem, 1.3dvw , 1.5rem);
+        font-size: clamp(0.9rem, 1.5dvw , 1.6rem);
+        line-height: clamp(1.1rem, 2.7dvw, 2.5rem);
     }
 
     .menuItem > .text h2::before {
@@ -623,6 +640,7 @@
 
     .menuItem > .text p {
         font-size: clamp(0.8rem, 1.2dvw , 1.3rem);
+        line-height: clamp(1rem, 1.8dvw, 1.6rem);
     }
 
     .three {
@@ -703,18 +721,20 @@
 
     .heroSection > div h1 {
         width: 65%;
-        margin: 1.5rem auto;
-        font-size: clamp(2rem, 6dvw , 4rem);
-        line-height: 4.7rem;
+        margin: 0 auto 1.5rem;
+        font-size: clamp(2rem, 6dvw , 4rem); 
+        line-height: clamp(2.4rem, 8.4dvw, 4.4rem);
         text-align: center;
     }
 
-    .heroSection > div p,
-    .pros .text p {
+    .heroSection p,
+    .pros .text p, 
+    .two > .text p, 
+    .three .details p {
         width: 100%;
         text-align: center;
-        font-size: clamp(1.1rem, 2.5dvw , 1.7rem);
-        line-height: 2rem;
+        font-size: clamp(1.2rem, 2.5dvw , 1.5rem);
+        line-height: clamp(1.5rem, 4dvw, 2.4rem)
     }
 
     .one {
@@ -732,8 +752,14 @@
     }
 
     .pros .illus, 
-    .pros .text, 
-    .menuItem {
+    .pros .text,
+    .two .text, 
+    .menuItem,
+    .three .illus,
+    .three .ul,
+    .three .details > div,
+    .four > div
+      {
         animation: fadeIn 1s linear;
         animation-fill-mode: both;
         animation-timeline: view();
@@ -767,7 +793,7 @@
         content: "";
         position: absolute;
         display: block;
-        width: 92%;
+        width: 95%;
         height: 4rem;
         border-radius: 4rem;
         background: radial-gradient(var(--soft-blue-three), var(--soft-blue-two));
@@ -802,21 +828,12 @@
 
     .pros .text h2, 
     .two > .text h1, 
-    .three .details h1, .four h1 {
+    .three .details h1, 
+    .four h1 {
         font-size: clamp(2rem, 6dvw , 4rem);
-        line-height: 3.5rem;
+        line-height: clamp(2.4rem, 6.7dvw, 3.5rem);
         text-align: center;
-    }
-    
-    .pros .text h2,
-    .pros .text p {
-        text-align: center;
-    }
-
-    .pros .text h2 {
-        width: 90%;
-        text-align: center;
-        text-wrap: balance;
+        /* text-wrap: balance; */
     }
 
     .pros .text p {
@@ -844,14 +861,8 @@
 
     .two > .text h1, 
     .two > .text p {
-        width: 78%;
+        width: 80%;
         text-align: center;
-    }
-
-    .two > .text p, 
-    .three .details .paragraph p {
-        font-size: clamp(1.1rem, 2.5dvw , 1.7rem);
-        line-height: 2.4rem;
     }
 
     .menuItem .img {
@@ -862,8 +873,8 @@
     }
 
     .menuItem > .text h2 {
-        line-height: 2.6rem;
         font-size: clamp(1rem, 2.5dvw , 1.5rem);
+        line-height: clamp(1.2rem, 3.5dvw, 2.6rem); 
     }
 
     .menuItem > .text h2::before {
@@ -874,7 +885,7 @@
 
     .menuItem > .text p {
         font-size: clamp(1rem, 2.2dvw , 1.5rem);
-        line-height: 1.8rem;
+        line-height: clamp(1.1rem, 3dvw, 1.8rem);
         font-weight: 400;
     }
 
@@ -888,7 +899,6 @@
         width: 100%;
         aspect-ratio: 16/10;
         position: relative;
-        /* border: 1px solid red; */
         margin-bottom: 6.5dvw;
     }
 
@@ -954,7 +964,7 @@
 
     .three .details .ul li .text {
         font-size: clamp(1rem, 2.2dvw, 1.5rem);
-        letter-spacing: 4px;
+        letter-spacing: clamp(1px, 0.4dvw, 4px);
     }
 
     .three .details .ul li .indicator {
@@ -981,13 +991,14 @@
     }
 
     .four {
-        width: 100%;
-        display: flex;
+        background: url("/ready-bg-tablet.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    .four > div {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
-        background: url("/ready-bg-tablet.jpg") no-repeat;
-        background-size: cover;
     }
 
     .four > h1 {
@@ -1006,37 +1017,45 @@
         /* background: none; */
     }
 
-    
     .heroSection {
         animation: fadeOut 1s linear;
         animation-fill-mode: backwards;
         animation-timeline: view();
         animation-range: exit 5%;
-        padding: 30dvh 6dvw 0;
-        min-height: 200dvw;
+        padding: 50dvh 7dvw 30dvh;
+        min-height: 100dvh;
         background: transparent;
         color: var(--white);
     }
 
     .heroSection > div h1 {
-        width: 100%;
+        width: 90%;
         text-align: center;
         text-wrap: balance;
-        font-size: clamp(1.5rem, 8.5dvw , 3.5rem);
+        font-size: clamp(2rem, 8dvw, 3.5rem);
+        line-height: clamp(2.5rem, 10dvw, 4rem);
+        margin: 6dvh 0 5dvh;
+    }
+
+    .heroSection p,
+    .pros .text p, 
+    .two > .text p, 
+    .three .details p,
+    .menuItem .text p,
+    .three .details .paragraph {
+        width: 100%;
+        text-align: center;
+        font-size: clamp(0.9rem, 4dvw , 1.8rem);
+        line-height: clamp(1.1rem, 7dvw, 2.4rem);
     }
 
     .heroSection > div p {
-        width: 100%;
-        text-align: center;
-        font-size: clamp(1rem, 4.2dvw , 2rem);
-        text-wrap: balance;
-        line-height: 1.8rem;
+        margin-bottom: 3.5rem;
     }
 
     .actionBtn, .actionBtnDark  {
-        font-size: clamp(0.9rem, 4dvw , 2rem);
-        padding: 5.5dvw 14dvw;
-        
+        font-size: clamp(0.9rem, 3.5dvw , 2rem);
+        padding: 5dvw 12dvw;
     }
 
     .one {
@@ -1052,43 +1071,68 @@
 
     }
 
+    .pros .illus {
+        width: 100%;
+        aspect-ratio: 5/6;
+        position: relative;
+    }
+
     .pros .illus .tablet {
         display: none;
     }
 
     .pros .illus .mob {
         display: block;
-        width: 100%;
     }
 
-    .pros:first-child .illus::after, 
-    .pros:last-child .illus::after {
+    .one .pros:first-of-type .illus {
+        transform: translateY(-12.5%);
+        margin-bottom: -15%;
+    }
+
+    .pros:last-of-type .illus::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 95%;
+        height: 4rem;
+        border-radius: 4rem;
+        background: radial-gradient(var(--soft-blue-three), var(--soft-blue-two));
+        filter: blur(27px);
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        z-index: -1;
+    }
+
+    .pros:first-of-type .illus::after, 
+    .pros:last-of-type .illus::after {
         height: 8rem;
         opacity: 0.7;
+        
     }
 
-    .pros .illus, .pros .text, .menuItem .img, .menuItem > .text {
+    .pros .illus, 
+    .pros .text, 
+    .menuItem .img, 
+    .menuItem > .text {
         animation: fadeIn 1s linear;
         animation-fill-mode: backwards;
         animation-timeline: view();
         animation-range: entry 5%;
     }
 
-    .pros .text {
-        width: 100%;
-    }
-
-    .pros .text h2 {
-        font-size: clamp(1rem, 7.5dvw , 2.5rem);
-        line-height: 2.6rem;
-        margin-top: 12dvw;
+    .pros .text h2, 
+    .two > .text h1, 
+    .three .details h1, 
+    .four h1 {
+        font-size: clamp(1.3rem, 7.5dvw , 2.6rem);
+        line-height: clamp(2rem, 9dvw, 3rem);
+        text-align: center;
+        text-wrap: none;
     }
 
     .pros .text p {
-        width: 100%;
-        font-size: clamp(1rem, 4.2dvw , 2rem);
-        text-align: center;
-        line-height: 1.7rem;
         font-weight: 500;
     }
 
@@ -1096,8 +1140,8 @@
         background: var(--white);
     }
 
-    .one .pros:first-child .illus {
-        transform: translateY(-11dvw);
+    .pros:last-child .text {
+        padding: 15dvw 0 25dvw;
     }
 
     .pros:last-child .illus .pattern {
@@ -1108,25 +1152,8 @@
         padding-bottom: 11dvh;
     }
 
-    .pros:last-child .text {
-        padding: 9dvh 0 13dvh;
-    }
-
     .two {
         padding: 20dvw 6dvw 13dvw;
-    }
-
-    .two > .text h1 {
-        width: 100%;
-        font-size: clamp(1rem, 7.5dvw , 2.5rem);
-        line-height: 2.6rem;
-        text-wrap: balance;
-    }
-
-    .two > .text p {
-        width: 100%;
-        font-size: clamp(1rem, 4.2dvw , 2rem);
-        line-height: 1.8rem;
     }
 
     .menuItem {
@@ -1134,18 +1161,25 @@
         padding-bottom: 3dvh;
     }
 
-    .menuItem .img, .menuItem > .text {
+    .menuItem .img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 4/3;
+    }
+
+    .menuItem > .text {
         width: 100%;
     }
 
     .menuItem > .text h2 {
         text-align: center;
-        font-size: clamp(1rem, 5dvw , 2rem);
+        font-size: clamp(1.1rem, 5dvw , 2rem);
+        padding-top: 4dvw;
     }
 
     .menuItem > .text p {
-        text-align: center;
-        font-size: clamp(1rem, 4.2dvw , 2rem);
+        padding: 3dvw 0 2dvw;
     }
 
     .menuItem > .text {
@@ -1156,34 +1190,35 @@
         display: none;
     }
 
-    .menuItem > .text p {
-        line-height: 1.8rem;
-    }
-
     .three {
         background: var(--white);
-        padding: 20dvw 0;
+        padding: 20dvw 6dvw;
     }
 
     .three .illus {
-       margin: 0 6dvw 10dvw; 
+       margin-bottom: 10dvw; 
     }
 
-    .three .illus .img.desk, .three .illus .img.tablet {
+    .three .illus .img.desk, 
+    .three .illus .img.tablet {
         display: none;
+    }
+
+    .three .illus {
+        width: 100%;
+        aspect-ratio: 5/6;
     }
 
     .three .illus .img.mob {
         display: block;
-        width: 100%;
     }
 
     .three .illus .pattern {
         display: none;
     }
 
-    .three .details {
-        padding: 0 5dvw;
+    .three .details .paragraph {
+        width: 100%;
     }
 
     .three .details .ul {
@@ -1203,31 +1238,18 @@
     }
 
     .three .details > div h1, 
-    .three .details > div .paragraph , 
-    .three .details > div .paragraph p {
-        width: 100%;
-        text-align: center;
-    }
-
-    .three .details > div h1, 
     .four h1 {
         font-size: clamp(1rem, 7dvw , 2.5rem);
     }
 
-    .three .details > div .paragraph p {
-        width: 100%;
-        font-size: clamp(1rem, 4dvw , 2rem);
-        line-height: 2rem;
-        font-weight: 500;
-    }
-
     .four {
         background: url("/ready-bg-mobile.jpg") no-repeat;
-        background-size: 100%;
-        padding: 20dvw 5dvw;
+        background-size: cover;
+        padding: 23dvw 6dvw;
     }
 
     .four h1 {
+        width: 100%;
         text-align: center;
     }
 }

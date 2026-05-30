@@ -155,32 +155,35 @@ export default function Home() {
               <Link className={style.actionBtnDark} href="/reservation">BOOK A TABLE</Link>
             </div>
 
-              <ul className={style.ul}>
-                  <li className={`${style.family} ${active == "family" && style.active}`}>
-                      <span className={style.indicator}></span>
-                      <span className={style.text} onClick={() => {
-                        if(active != "family") {  setActive("family") }
-                      }}>FAMILY GATHERING</span>
-                  </li>
-                  <li className={`${style.special} ${active == "special" && style.active}`}>
-                      <span className={style.indicator}></span>
-                      <span className={style.text} onClick={() => {
-                        if(active != "special") {  setActive("special") }
-                      }} >SPECIAL EVENTS</span>
-                  </li>
-                  <li className={`${style.social} ${active == "social" && style.active}`}>
-                      <span className={style.indicator}></span>
-                      <span className={style.text} onClick={() => {
-                        if(active != "social") {  setActive("social") }
-                      }} >SOCIAL EVENTS</span>
-                  </li>
-              </ul>
+            <ul className={style.ul}>
+              <li className={`${style.family} ${active == "family" && style.active}`}>
+                  <span className={style.indicator}></span>
+                  <span className={style.text} onClick={() => {
+                    if(active != "family") {  setActive("family") }
+                  }}>FAMILY GATHERING</span>
+              </li>
+              <li className={`${style.special} ${active == "special" && style.active}`}>
+                  <span className={style.indicator}></span>
+                  <span className={style.text} onClick={() => {
+                    if(active != "special") {  setActive("special") }
+                  }} >SPECIAL EVENTS</span>
+              </li>
+              <li className={`${style.social} ${active == "social" && style.active}`}>
+                  <span className={style.indicator}></span>
+                  <span className={style.text} onClick={() => {
+                    if(active != "social") {  setActive("social") }
+                  }} >SOCIAL EVENTS</span>
+              </li>
+            </ul>
           </div>
       </section>
       
       <section className={style.four}>
+        <div>
           <h1>Ready to make a reservation?</h1>
           <Link className={style.actionBtn} href="/reservation">BOOK A TABLE</Link>
+        </div>
+          
       </section>
     </main>
   );
