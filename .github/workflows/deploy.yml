@@ -1,0 +1,52 @@
+name: Deploy NextJS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm tsc --noEmit
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            export PNPM_HOME="/home/blacksun225_deploy/.local/share/pnpm"
+            export PATH="$PNPM_HOME/bin:$PATH"
+            export CI=true
+            git config --global --add safe.directory /var/www/dine_restaurant_next
+            cd /var/www/dine_restaurant_next
+            git fetch origin main
+            git reset --hard origin/main
+            pnpm install --prefer-offline --no-frozen-lockfile
+            pnpm run build
+            pm2 restart dine_restaurant_next || pm2 start npm --name dine_restaurant_next -- start
+            pm2 save
