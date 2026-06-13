@@ -7,6 +7,7 @@ import { formSchema } from "../utils/constants";
 import * as z from "zod";
 import { sendAppointmentMail } from "../actions/mail";
 import { ChangeEvent, useState } from "react";
+import Header from "../components/Header";
 
 const arrowIcon = "/icons/icon-arrow.svg";
 const checkIcon = "/icons/icon-check.svg";
@@ -61,8 +62,10 @@ export default function Reservation() {
         numberOfPerson: ""
     })
 
+    const [isLoading, setIsLoading] = useState(false);
+
     async function submitForm(formStateCopy: typeof formState) {
-        console.log("submitting form")
+        setIsLoading(true);
         setFormStateError({
             name: "",
             email: "",
@@ -83,6 +86,8 @@ export default function Reservation() {
 
             console.log("result : ", result);
 
+            setIsLoading(false);
+
         }else{
             const errors = z.flattenError(submitResult.error).fieldErrors;
             const formStateErrorClone = {
@@ -101,6 +106,7 @@ export default function Reservation() {
                 formStateErrorClone[key] = errors[key]?.join("") || "";
             }
             setFormStateError(formStateErrorClone);
+            setIsLoading(false);
         }
     }
     
@@ -146,6 +152,7 @@ export default function Reservation() {
 
     return (
         <section className={style.main} >
+            <Header />
             <section className={style.section} >
                 <div className={style.text}>
                     <h1>Reservations</h1>
@@ -250,7 +257,7 @@ export default function Reservation() {
                             </span>
                         </div>
                         {formStateError.numberOfPerson && <strong className={style.error}>{formStateError.numberOfPerson}</strong>}
-                        <button type="submit" className={style.actionBtnDark}> MAKE A RESERVATION </button>
+                        <button type="submit" className={style.actionBtnDark}> {isLoading ? "Processing request..." : "MAKE A RESERVATION"} </button>
                     </form>
                     <div className={style.illus}>
                         <Image fill alt="six lines aligned vertically for decoration" src={lines} />
