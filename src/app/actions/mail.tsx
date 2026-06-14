@@ -72,7 +72,7 @@ export async function sendAppointmentMail(validatedData: {
                         <h1 style="text-align:center;" >Dine Restaurant</h1> 
                         <p>You booked a table for ${data.numberOfPerson}, you can add this event in your calendar since your reservation has been registered.</p>
                         <p>See you soon, have a good day.</p>
-                        <h2 style="font-family:'Glass Antiqua', Georgia, 'Times New Roman', serif;font-size:24px;text-align:center;background:black;color:ivory;padding:1.5rem;letter-spacing:2px;" >
+                        <h2 style="font-family:'Glass Antiqua',Georgia,serif;font-size:24px;text-align:center;background:black;color:ivory;padding:1.5rem;letter-spacing:2px;" >
                             MAISON DOUDJO
                         </h2>
                     </main>

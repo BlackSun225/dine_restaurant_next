@@ -68,8 +68,8 @@
     }
 
     .footer > div ul li {
-        font-size: clamp(1rem, 3.5dvw, 1.7rem);
-        line-height: clamp(1.3rem, 4.5dvw, 2rem);
+        font-size: clamp(1rem, 3.5dvw, 1.1rem);
+        line-height: clamp(1.3rem, 4.5dvw, 1.6rem);
     }
 }
 

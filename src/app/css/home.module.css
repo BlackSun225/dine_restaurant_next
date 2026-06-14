@@ -706,9 +706,10 @@
         animation-range: exit 5%;
         display: flex;
         min-height: 100dvh;
-        padding: 44dvw 12dvw 17dvw;
+        padding: 44dvw 12dvw 0dvw;
         flex-direction: column;
         align-items: center;
+        border: 1px solid red;
     }
 
     .heroSection > div {
@@ -1022,7 +1023,7 @@
         animation-fill-mode: backwards;
         animation-timeline: view();
         animation-range: exit 5%;
-        padding: 50dvh 7dvw 30dvh;
+        padding: 75dvw 7dvw 0dvw;
         min-height: 100dvh;
         background: transparent;
         color: var(--white);
@@ -1045,7 +1046,7 @@
     .three .details .paragraph {
         width: 100%;
         text-align: center;
-        font-size: clamp(0.9rem, 4dvw , 1.8rem);
+        font-size: clamp(1rem, 4.5dvw , 1.4rem);
         line-height: clamp(1.1rem, 7dvw, 2.4rem);
     }
 

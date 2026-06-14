@@ -318,10 +318,6 @@
 
 
 @media screen and (max-width: 800px) {
-    .main {
-        background: var(--white) url("/hero-bg-mobile.jpg") no-repeat;
-        background-size: 100% auto;
-    }
 
     .section {
         flex-direction: column;
@@ -363,6 +359,10 @@
 
 
 @media screen and (max-width: 600px) { 
+    .main {
+        background: var(--white) url("/hero-bg-mobile.jpg") no-repeat;
+        background-size: 100% auto;
+    }
 
     .section {
         flex-direction: column;
