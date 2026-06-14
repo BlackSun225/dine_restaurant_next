@@ -390,14 +390,20 @@
 
     .form .pick, .pick > div {
         gap: 1rem;
+        
     }
 
     .form .pick {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
+    }
+
+    .pick > div {
+        padding: 0.5rem 0;
     }
 
     .form input {
         padding: 2.5dvw;
+                
     }
 
     .selectDrop {
