@@ -32,7 +32,7 @@
 }
 
 .footer > div ul li {
-    font-size: 0.9rem;
+    font-size: 1rem;
     letter-spacing: 2px;
     list-style-type: none;
 }
@@ -66,11 +66,6 @@
         align-items: start;
         gap: 1.5rem;
     }
-
-    .footer > div ul li {
-        font-size: clamp(1rem, 3.5dvw, 1.1rem);
-        line-height: clamp(1.3rem, 4.5dvw, 1.6rem);
-    }
 }
 
 
@@ -98,5 +93,6 @@
 
     .footer > div ul li {
         text-align: center;
+        font-size: 0.9rem;
     }
 }

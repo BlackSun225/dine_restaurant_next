@@ -11,7 +11,7 @@
 .pros .text p, 
 .two > .text p, 
 .three .details p {
-  font-size: clamp(0.9rem, 1.7dvw , 1.2rem);
+  font-size: clamp(1rem, 1.7dvw , 1.3rem);
   line-height: clamp(1.1rem, 2.4dvw, 2rem);
 }
 
@@ -1032,7 +1032,7 @@
         width: 90%;
         text-align: center;
         text-wrap: balance;
-        font-size: clamp(2rem, 8dvw, 3.5rem);
+        font-size: clamp(2.2rem, 5.5dvw , 4.7rem);
         line-height: clamp(2.5rem, 10dvw, 4rem);
         margin: 6dvh 0 5dvh;
     }
@@ -1045,8 +1045,8 @@
     .three .details .paragraph {
         width: 100%;
         text-align: center;
-        font-size: clamp(1rem, 4.5dvw , 1.4rem);
-        line-height: clamp(1.1rem, 7dvw, 2.4rem);
+        font-size: clamp(1rem, 5dvw , 1.4rem);
+        line-height: clamp(1.3rem, 7dvw, 2.2rem);
     }
 
     .heroSection > div p {

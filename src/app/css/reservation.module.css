@@ -26,8 +26,8 @@
 }
 
 .section .text p {
-    font-size: clamp(1.2rem, 1.5dvw , 1.4rem);
-    line-height: 1.8rem;
+    font-size: clamp(1rem, 5dvw , 1.4rem);
+    line-height: clamp(1.3rem, 7dvw, 2.2rem);
     font-weight: 300;
     text-wrap: balance;
 }
@@ -279,8 +279,11 @@
     padding: 0.5rem;
 }
 
-.actionBtnDark {
-    display: block;
+.actionBtnDark, .actionBtnDarkDisabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     width: 100%;
     text-decoration: none;
     color: var(--white);
@@ -295,9 +298,71 @@
     cursor: pointer;
 }
 
+.actionBtnDarkDisabled { 
+    cursor: not-allowed;
+}
+
+.actionBtnDark .circle {
+    display: block;
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--white) transparent var(--white) var(--white);
+    position: relative;
+    overflow: visible;
+    border-radius: 50%;
+    transition: all 0.5s linear;
+    animation: rotate 0.9s infinite linear;
+}
+
+.actionBtnDark .circle::after {
+    content: "";
+    display: block;
+    width: 4px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    background-color: var(--white);
+    position: absolute;
+    top: 1px;
+    right: 0;
+    z-index: 2;
+    transition: all 0.7s linear;
+}
+
 .actionBtnDark:hover {
     background: var(--white);
     color: var(--dark);
+
+    .circle {
+        border-color: var(--dark) transparent var(--dark) var(--dark);
+    }
+
+    .circle::after {
+        background-color: var(--dark);
+    }
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.success, 
+.error {
+    display: block;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -330,7 +395,8 @@
     }
     
     .section .text p {
-        font-size: clamp(1rem, 2.5dvw , 1.4rem);
+        font-size: clamp(1rem, 3.5dvw , 1.4rem);
+        line-height: clamp(1.3rem, 5dvw, 2.2rem);
     }
     
     .section > .text h1, .section > .text p {
@@ -410,11 +476,6 @@
         padding: 2.3dvw;
         max-width: 5rem;
     }
-
-    /* .selectDrop .dropVal img {
-        display: block;
-        width: 1rem;
-    } */
 
     .pick > span {
         max-width: 5rem;

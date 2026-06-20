@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image";
-// import Link from "next/link";
 import style from "@/app/css/reservation.module.css"
 import { formSchema } from "../utils/constants";
 import * as z from "zod";
@@ -63,6 +62,13 @@ export default function Reservation() {
     })
 
     const [isLoading, setIsLoading] = useState(false);
+    const [requestResult, setRequestResult] = useState<"success" | "error" | null>(null);
+
+    function resetRequestResult() {
+        setTimeout(() => {
+            setRequestResult(null);
+        }, 3500)
+    }   
 
     async function submitForm(formStateCopy: typeof formState) {
         setIsLoading(true);
@@ -85,9 +91,13 @@ export default function Reservation() {
             const result = await sendAppointmentMail(submitResult.data);
 
             console.log("result : ", result);
-
             setIsLoading(false);
-
+            if(result.status) {
+                setRequestResult("success");
+            }else{
+                setRequestResult("error");
+            }
+            resetRequestResult();
         }else{
             const errors = z.flattenError(submitResult.error).fieldErrors;
             const formStateErrorClone = {
@@ -257,7 +267,18 @@ export default function Reservation() {
                             </span>
                         </div>
                         {formStateError.numberOfPerson && <strong className={style.error}>{formStateError.numberOfPerson}</strong>}
-                        <button type="submit" className={style.actionBtnDark}> {isLoading ? "Processing request..." : "MAKE A RESERVATION"} </button>
+                        {
+                            !requestResult ? 
+                            <button type={isLoading ? "button" : "submit"} className={style[isLoading ? "actionBtnDarkDisabled" : "actionBtnDark"]} disabled={isLoading} > 
+                                <span>{isLoading ? "Processing request..." : "MAKE A RESERVATION"}</span>  
+                                {isLoading && <span className={style.circle}></span>}  
+                            </button>
+                            :
+                            requestResult == "success" ? <span className={style.success} >Mail sent ✅</span> 
+                            :
+                            <span className={style.error} >Error happened ⛔, check your internet connexion and retry.</span>
+                        }
+
                     </form>
                     <div className={style.illus}>
                         <Image fill alt="six lines aligned vertically for decoration" src={lines} />
